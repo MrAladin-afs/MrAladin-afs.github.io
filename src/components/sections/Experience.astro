@@ -14,8 +14,6 @@ const millisecondsInYear = 1000 * 60 * 60 * 24 * 365
       const timeLapse = (endDate!=null?new Date(endDate).getTime():new Date().getTime()) - new Date(startDate).getTime()
       const workedYears = Math.floor(+timeLapse/millisecondsInYear)
       const workedMonths = Math.floor((+timeLapse % millisecondsInYear) / (millisecondsInYear / 12))
-      const workedTime = `${workedYears}y : ${workedMonths}m`
-      const workedDatetime = `P${workedYears}Y${workedMonths}M`
       return (
         <li class="relative print:py-2">
           <div class="group relative grid pb-1 print:pb-0 transition-all print:grid-cols-1 print:gap-1 sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100">
