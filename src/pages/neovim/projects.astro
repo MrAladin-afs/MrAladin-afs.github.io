@@ -1,26 +1,28 @@
 ---
 import Layout from '@layouts/Neovim.astro';
-import { projects } from "@cv";
+import CV from "@cv";
 import { Icon } from 'astro-icon/components';
+
+const { projects } = CV;
 ---
 
 <Layout title="Projects">
   <ul id="project-list">
-    {projects && projects.map(({ url, description, highlights, name, isActive, github, stack}) => {
+    {projects && projects.map(({ url, description, highlights, name, keywords, roles, type }) => {
       return (
         <li
           class="mb-6 project-item leading-6 nvim-line"
           class:list={
-            {'active': isActive, 'open-source': github}
+            {'active': url}
           }
-          data-href={isActive ? url : github}
+          data-href={url}
         >
           <div class="flex gap-2">
-            {isActive ? (
+            {url ? (
               <a
                 class="group flex items-center gap-1 text-lg decoration-dotted underline-offset-[5px] hover:underline transition-all duration-200 text-blue project-url"
                 href={url}
-                title={`Ver ${name}`}
+                title={`View ${name}`}
                 target="_blank"
               >
                 {name}
@@ -30,34 +32,35 @@ import { Icon } from 'astro-icon/components';
               <span class="text-lg text-blue">{name}</span>
             )}
             
-            {github && (
-              <a
-                href={github}
-                title={`View ${name} in GitHub`}
-                aria-label={`View ${name} in GitHub`}
-                target="_blank"
-                rel="noopener"
-                class="opacity-75 transition duration-200 hover:text-green decoration-dotted underline-offset-[8px] hover:underline repository-url"
-              >
-                <span>〔GITHUB〕</span>
-              </a>
+            {type && (
+              <span class="opacity-75 transition duration-200 text-green">
+                〔{type}〕
+              </span>
             )}
           </div>
             <div>
               {highlights && highlights.map(
                 (highlight) =>
-                  <span class="text-gray-600">{highlight.slice(3)}. </span> //Slice to remove emojis, remove if you don't use emojis
+                  <span class="text-gray-600">{highlight}. </span>
               )}
             </div>
             <p class="text-gray-500">
               {description}
             </p>
             
-            <ul class="flex print:hidden flex-wrap gap-2 mt-6" aria-label="Technologies used">
-              {stack && Object.entries(stack).map(([label], index) => (
-                <li class=" cursor-default bg-transparent border-nvim-green/60 text-green flex items-center border-solid border rounded-md px-2 py-1 text-xs backdrop-blur-sm">
+            <ul class="flex print:hidden flex-wrap gap-2 mt-6" aria-label="Keywords">
+              {keywords && keywords.map((keyword, index) => (
+                <li class="cursor-default bg-transparent border-nvim-green/60 text-green flex items-center border-solid border rounded-md px-2 py-1 text-xs backdrop-blur-sm">
                   <span>〔{index}〕</span>
-                  <span>{label}</span>
+                  <span>{keyword}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <ul class="flex print:hidden flex-wrap gap-2 mt-2" aria-label="Roles">
+              {roles && roles.map((role, index) => (
+                <li class="cursor-default bg-transparent border-nvim-blue/60 text-blue flex items-center border-solid border rounded-md px-2 py-1 text-xs backdrop-blur-sm">
+                  <span>〔{role}〕</span>
                 </li>
               ))}
             </ul>

@@ -1,10 +1,36 @@
-> [!NOTE]
-> If you use, refactor or improve it in some way for your personal ussage, i'll be glad if you let me know to see it. THX!
+# Aladin's Portfolio
 
-## Print-friendly portfolio CV
+A personal portfolio website for Aladin, a FiveM Developer.
 
-> [!TIP]
-> 〔🌐〕[Take a look](https://www.arielfalcon.me)
+## About
+
+This portfolio showcases Aladin's skills and experience as a FiveM Developer, including:
+- Server development
+- Vehicle liveries
+- Peds
+- EUP (Emergency Uniform Pack)
+- Maps and buildings
+
+## Development
+
+This site is built with:
+- Astro
+- Tailwind CSS
+- TypeScript
+
+## Setup Instructions
+
+1. Clone the repository
+2. Install dependencies with `npm install` or `pnpm install`
+3. Run the development server with `npm run dev` or `pnpm dev`
+4. Build for production with `npm run build` or `pnpm build`
+
+## Contact
+
+For more information, contact Aladin on Discord.
+
+## Made with ❤️ by Aladin
+
 <p align = "center">
     <img src="public/astro-vim.png" alt="logo" width="200"/>
 </p>
@@ -30,7 +56,7 @@ I also implemented and improved this neovim mode [**neovim-porfolio**](https://g
 ### 0. One-click to deploy on Vercel
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ArielFalcon/portfolio&project-name=portfolio&repository-name=portfolio)
 
-Modify the `cv.json` file to create your own printable Portfolio/CV.
+Modify the `cv.json` file to update your portfolio information.
 
 ### 1. Use this Repo as an Astro Project Template 
 
@@ -52,7 +78,7 @@ pnpm install
 
 ### 2. Add Your Content:
 
-Edit the `cv.json` file to create your own printable Portfolio/CV.
+Edit the `cv.json` file to customize your portfolio content.
 
 ### 3. Launch the Development Server:
 
@@ -73,6 +99,4 @@ Change the data-theme of `cv.json` and choose one of the colour themes defined i
 | ⚙️  | `build`         | Checks for errors and creates a production build in `./dist/`. |
 | ⚙️  | `preview`       | Local preview at `localhost:4321`                                       |
 | 📦  | `deploy:vercel`         | Deploy on Vercel.                           |
-| 📦 | `deploy:cloudflare`       | Deploy on Cloudflare, please run `wrangler login` first.                                           |                                |
-
-CV JSON schema from [**jsonresume.org**](https://jsonresume.org/schema/)
+| 📦 | `deploy:cloudflare`       | Deploy on Cloudflare, please run `wrangler login` first.                                           |

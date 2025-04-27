@@ -10,17 +10,16 @@ import KeyboardManager from "@/components/KeyboardManager.astro";
 import ThemeSwitch from "@/components/ThemeSwitch.astro";
 
 import CV, { basics } from "@cv";
-import Education from "@/components/sections/Education.astro";
 import NeovimButton from "../components/neovim/Button.astro";
 const { name} = basics;
 ---
 
 <Layout title={`${name} - Portfolio`}>
   <main
-    class="relative grid h-full max-w-7xl gap-12 p-8 max-sm:py-16 md:min-h-screen md:grid-cols-6 md:p-16 xl:gap-24 text-skin-base print:gap-4"
+    class="relative grid h-full max-w-7xl gap-12 p-8 max-sm:py-16 md:min-h-screen md:grid-cols-6 md:p-16 xl:gap-24 text-skin-base"
   >
     <div
-      class="slide-enter space-y-6 ease-in md:col-span-2 print:grid print:grid-cols-5 print:space-y-0"
+      class="slide-enter space-y-6 ease-in md:col-span-2"
     >
       <Hero className="col-span-2" />
       <About className="col-span-3" />
@@ -28,15 +27,14 @@ const { name} = basics;
       <NeovimButton />
     </div>
     <div
-      class="slide-enter-content space-y-12 md:col-span-4 print:grid print:grid-cols-5 print:grid-flow-row print:gap-2 print:space-y-0"
+      class="slide-enter-content space-y-12 md:col-span-4"
     >
-      <Experience className="print:col-span-3" />
+      <Experience />
       {
         (
           <>
-            <Projects className="print:hidden" />
-            {CV?.education && <Education className="order-first print:col-span-2" />}
-            <Skills className="print:col-span-full" />
+            <Projects />
+            <Skills />
           </>
         )
       }
@@ -58,10 +56,6 @@ const { name} = basics;
 <style is:global>
   * {
     scrollbar-color: var(--color-button-muted) var(--color-fill);
-  }
-  @page {
-    size: auto;
-    margin: 0;
   }
   main {
     margin: auto;
