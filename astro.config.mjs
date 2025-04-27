@@ -26,7 +26,7 @@ export default defineConfig({
       },
     })
   ],
-  output: "hybrid",
+  output: "static",
   adapter: vercel(),
-  site: "https://arielfalcon.me",
+  site: "https://mraladin-afs.github.io",
 });
