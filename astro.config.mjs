@@ -4,10 +4,10 @@ import tailwind from "@astrojs/tailwind";
 import astroIcon from 'astro-icon';
 import mdx from '@astrojs/mdx';
 import playformCompress from "@playform/compress";
-import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://mraladin-afs.github.io',
   integrations: [
     tailwind(),
     mdx(),
@@ -26,7 +26,5 @@ export default defineConfig({
       },
     })
   ],
-  output: "static",
-  adapter: vercel(),
-  site: "https://mraladin-afs.github.io",
+  output: 'static'
 });
