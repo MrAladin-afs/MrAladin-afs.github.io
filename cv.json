@@ -1,7 +1,7 @@
 {
   "analyticsCode": "",
   "basics": {
-    "name": "Aladin",
+    "name": "Alamin Likhon",
     "label": "FiveM Developer",
     "animated_main_label": "developer",
     "animated_secondary_initial_label": "fivem",
@@ -22,7 +22,7 @@
         "network": "Discord",
         "icon": "mdi:discord",
         "color": "#5865F2",
-        "username": "Aladin",
+        "username": "Alamin Likhon",
         "url": "https://discord.com/invite/FrjYVJfKvB"
       },
       {
